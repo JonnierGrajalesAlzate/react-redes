@@ -5,7 +5,6 @@ export const PostContext = createContext()
 function PostProvider({ children }) {
   const [posts, setPosts] = useState([])
 
-  // 🔹 Cargar datos al iniciar
   useEffect(() => {
     const storedPosts = localStorage.getItem("posts")
     if (storedPosts) {
@@ -13,7 +12,6 @@ function PostProvider({ children }) {
     }
   }, [])
 
-  // 🔹 Guardar cada vez que cambian los posts
   useEffect(() => {
     localStorage.setItem("posts", JSON.stringify(posts))
   }, [posts])

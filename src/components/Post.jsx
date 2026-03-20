@@ -27,6 +27,13 @@ function Post({ post }) {
       <h4>{post.author}</h4>
       <p>{post.content}</p>
 
+      {/* 📸 Imagen */}
+      {post.image && (
+        <img src={post.image} alt="post" width="300" />
+      )}
+
+      <br />
+
       <button onClick={handleLike}>❤️ {likes}</button>
       <button onClick={handleDelete}>🗑️ Eliminar</button>
 
